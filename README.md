@@ -1,2 +1,5 @@
 The README file for my project
-This is for testing how to undo a stage with git reset
+- scripts: all scripts written for programming class
+	- 'hello_world.py': first Python script, "hello world!"
+
+- CV.md 
