@@ -1,4 +1,4 @@
-#!/bin/bash/env python3
+#!/usr/bin/env python3
 
 # prompt the user to input their name
 name = input("enter your name: ")
