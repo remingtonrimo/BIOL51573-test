@@ -7,6 +7,6 @@ name = input("enter your name: ")
 print('Hello world')
 
 # print greeting
-print('hello', name)
+print('hello,', name)
 
 
