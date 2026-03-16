@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+
+# we are going to first prompt the user to input the job name
+jobname = input("enter the job name: ")
+time=input("How much time do you need:")
+qname=input("Which queue do you want to use:")
+email=input("Enter your email address:")
+filename=input("Define your filename:")
+
+import sys
+sys.stdout = open(filename, 'w')
+print("#!/bin/bash")
+
+print(f"#SBATCH --job-name={jobname}")
+print(f"#SBATCH --partition={qname}")
+print(f"#SBATCH --nodes=1")
+print(f"#SBATCH --qos=comp")
+print(f"#SBATCH --tasks-per-node=32")
+print(f"#SBATCH --time={time}")
+print(f"#SBATCH -o test_%j.out")
+print(f"#SBATCH -e test_%j.err")
+print(f"#SBATCH --mail-type=ALL")
+print(f"#SBATCH --mail-user={email}")
+
+print(f"export OMP_NUM_THREADS=32")
+
+print(f("module purge"))
+print(f("module load intel/18.0.1 impi/18.0.1 mkl/18.0.1"))
+sys.stdout.close()
