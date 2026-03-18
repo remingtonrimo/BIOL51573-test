@@ -10,7 +10,7 @@ filename=input("Define your filename:")
 import sys
 sys.stdout = open(filename, 'w')
 print("#!/bin/bash")
-
+print()
 print(f"#SBATCH --job-name={jobname}")
 print(f"#SBATCH --partition={qname}")
 print(f"#SBATCH --nodes=1")
