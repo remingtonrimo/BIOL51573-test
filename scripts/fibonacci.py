@@ -7,6 +7,9 @@ parse_master5000=argparse.ArgumentParser(description="This script calculates the
                                      given position")
 # command line arguments - required - positional arguments
 parse_master5000.add_argument("position",help="Position in the Fibonacci sequence",type=int)
+# here's an optional argument
+parse_master5000.add_argument("-v","--verbose",help="Print verbose output",action="store_true")
+
 # parse the arguments
 args=parse_master5000.parse_args()
 
@@ -18,4 +21,7 @@ for i in range(args.position):
 
 fibonacci_number = a
 
-print(f"The Fibonacci number for {args.position} is {fibonacci_number}")
+if args.verbose:
+    print(f"The Fibonacci number for {args.position} is {fibonacci_number}")
+else:
+    print(fibonacci_number)
