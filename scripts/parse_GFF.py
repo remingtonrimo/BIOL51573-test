@@ -14,8 +14,8 @@ def lawyer():
 def main():
     args = lawyer()
     genome_sequence = gff_functions.read_fasta(args.fasta)
-    gff_functions.read_gff(args.gff3)
-    gff_functions.write_output()
+    gff_functions.read_gff(args.gff3, genome_sequence)
+    # gff_functions.write_output()
 #
 if __name__ == "__main__":
     main()
